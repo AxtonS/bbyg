@@ -1,75 +1,65 @@
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif; /* Or choose a more stylish font */
+    font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to bottom right, #ffb6c1, #ffffff); /* Pink to White Gradient */
-    /* Optional: Add hearts background */
-    /* background-image: url('hearts_pattern.png'); */
-    /* background-repeat: repeat; */
-    /* background-blend-mode: overlay; */
-    /* transition: opacity 2s ease-in-out; /* No longer fading out the whole body */
+    background: linear-gradient(to bottom right, #ffb6c1, #ffffff);
 }
 
 .container {
     text-align: center;
-    padding: 12px; /* Further reduced padding */
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for content */
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 90%;
-    width: 600px; /* Adjust as needed, consider making this % for smaller screens too */
-    margin-top: 15px; /* Reduced margin */
-    margin-bottom: 15px; /* Reduced margin */
+    width: 600px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 #page-title {
-    font-size: 2.5em; /* Reduced font size */
-    color: #d147a3; /* A nice pink/purple, adjust to your liking */
-    margin-bottom: 12px; /* Reduced margin */
-    font-family: 'Georgia', serif; /* A slightly more decorative font, optional */
+    font-size: 2.5em;
+    color: #d147a3;
+    margin-bottom: 12px;
+    font-family: 'Georgia', serif;
 }
 
 #photo {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    margin-bottom: 12px; /* Reduced margin */
-    border: 5px solid #ff69b4; /* Hot pink border */
-    transition: opacity 0.5s ease-in-out; /* For fading photo in/out */
+    margin-bottom: 12px;
+    border: 5px solid #ff69b4;
+    transition: opacity 0.5s ease-in-out;
 }
 
 #reasons-container {
-    cursor: pointer; /* Indicate it's clickable */
-    min-height: 70px; /* Further reduced min-height */
+    cursor: pointer;
+    min-height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 12px; /* Further reduced padding */
-    margin-bottom: 12px; /* Further reduced margin */
+    padding: 12px;
+    margin-bottom: 12px;
 }
 
 #reason-text {
-    font-size: 2.2em; /* Reduced font size */
-    color: #ff1493; /* Deep pink color */
+    font-size: 2.2em;
+    color: #ff1493;
     font-weight: bold;
     margin: 0;
-    transition: opacity 0.5s ease-in-out; /* Smooth transition for reasons text */
+    transition: opacity 0.5s ease-in-out;
 }
 
 #final-message {
-    font-size: 2.7em; /* Reduced font size */
-    color: #8b0000; /* Dark red/maroon color */
+    font-size: 2.7em;
+    color: #8b0000;
     font-weight: bold;
-    opacity: 0; /* Start transparent for fade-in */
-    display: none; /* Initially hidden */
-    padding: 12px; /* Reduced padding */
-    transition: opacity 0.5s ease-in-out; /* For fading in */
-}
-
-/* .fade-out class on body is no longer used for the final sequence */
-/* .fade-out {
     opacity: 0;
-} */
+    display: none;
+    padding: 12px;
+    transition: opacity 0.5s ease-in-out;
+}

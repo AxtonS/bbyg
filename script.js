@@ -9,67 +9,56 @@ document.addEventListener('DOMContentLoaded', () => {
         "4. How smart and thoughtful you are",
         "3. Just being yourself even if it means sometimes you have to fall face first because your feet moved too fast",
         "2. Our shared dreams and future together",
-        "1. Because I just couldn't imagine anyone I'd want in my life more than my beautiful waife!!!" // This is the 10th reason
+        "1. Because I just couldn't imagine anyone I'd want in my life more than my beautiful waife!!!"
     ];
 
     let currentReasonIndex = 0;
     const reasonTextElement = document.getElementById('reason-text');
     const reasonsContainer = document.getElementById('reasons-container');
     const finalMessageElement = document.getElementById('final-message');
-    const photoElement = document.getElementById('photo'); // Get the photo element
-    // const bodyElement = document.body; // No longer needed for final body fade-out
+    const photoElement = document.getElementById('photo'); 
 
-    // Function to display the current reason
     function displayReason(index) {
         if (index < reasons.length) {
             reasonTextElement.textContent = reasons[index];
         }
     }
 
-    // Initial display of the first reason
     displayReason(currentReasonIndex);
-    reasonTextElement.style.opacity = 1; // Make sure the first reason is visible
+    reasonTextElement.style.opacity = 1; 
 
     let finalSequenceTriggered = false; // Flag to prevent re-triggering final sequence
-
-    // Add click listener to the reasons container
-    reasonsContainer.addEventListener('click', () => {
+    document.addEventListener('click', () => {
         if (finalSequenceTriggered) {
             return; // Do nothing if final sequence already happened
         }
 
         if (currentReasonIndex < reasons.length - 1) {
-            // Still more reasons to show (not the 10th one yet)
-            reasonTextElement.style.opacity = 0; // Fade out current reason text
+            reasonTextElement.style.opacity = 0; 
 
-            // Wait for fade out, then change text and fade in
             setTimeout(() => {
                 currentReasonIndex++;
                 displayReason(currentReasonIndex);
-                reasonTextElement.style.opacity = 1; // Fade in next reason text
-            }, 500); // Match CSS transition duration for #reason-text (0.5s)
+                reasonTextElement.style.opacity = 1; 
+            }, 500); 
 
         } else if (currentReasonIndex === reasons.length - 1) {
-            // This is the 10th reason being displayed, and it's clicked
-            finalSequenceTriggered = true; // Set flag
+            finalSequenceTriggered = true; 
 
-            reasonTextElement.style.opacity = 0; // Fade out the 10th reason text
-            photoElement.style.opacity = 0;      // Fade out the first photo
+            reasonTextElement.style.opacity = 0; 
+            photoElement.style.opacity = 0;      
 
-            // Wait for the 10th reason and 1st photo to fade out
             setTimeout(() => {
-                reasonsContainer.style.display = 'none'; // Hide reasons area completely
+                reasonsContainer.style.display = 'none'; 
+                photoElement.src = 'IMG_0374.jpg'; 
+                finalMessageElement.style.display = 'block'; 
 
-                photoElement.src = 'IMG_0374.jpg'; // Change photo source
-                finalMessageElement.style.display = 'block'; // Make final message take space
-
-                // Force a reflow to ensure transitions apply correctly after display change
                 void photoElement.offsetHeight;
                 void finalMessageElement.offsetHeight;
 
-                photoElement.style.opacity = 1;       // Fade in the second photo
-                finalMessageElement.style.opacity = 1; // Fade in the final message
-            }, 500); // This duration should be >= the opacity transition of photo and reason-text (0.5s)
+                photoElement.style.opacity = 1;       
+                finalMessageElement.style.opacity = 1; 
+            }, 500); 
         }
     });
 });
