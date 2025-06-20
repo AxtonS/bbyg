@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
     displayReason(currentReasonIndex);
     reasonTextElement.style.opacity = 1; 
 
-    let finalSequenceTriggered = false; // Flag to prevent re-triggering final sequence
+    let finalSequenceTriggered = false;
     document.addEventListener('click', () => {
         if (finalSequenceTriggered) {
-            return; // Do nothing if final sequence already happened
+            return;
         }
 
         if (currentReasonIndex < reasons.length - 1) {
